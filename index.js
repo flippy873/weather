@@ -59,15 +59,15 @@ function fetchWeatherData(location) {
         dayInfoContainer.innerHTML = `
 
             <div>
-                <span class="title">SATEEN TODENNÄKÖISYYS</span>
+                <span class="title">Precipitation</span>
                 <span class="value">${todayPrecipitation}</span>
             </div>
             <div>
-                <span class="title">KOSTEUS</span>
+                <span class="title">Humidity</span>
                 <span class="value">${todayHumidity}</span>
             </div>
             <div>
-                <span class="title">TUULEN NOPEUS</span>
+                <span class="title">Wind speed</span>
                 <span class="value">${todayWindSpeed}</span>
             </div>
 
