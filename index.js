@@ -38,8 +38,8 @@ function fetchWeatherData(location) {
         const todayTemperature = `${Math.round(data.list[0].main.temp)}°C`;
         const todayWeatherIconCode = data.list[0].weather[0].icon;
 
-        todayInfo.querySelector('h2').textContent = new Date().toLocaleDateString('fr', { weekday: 'long' });
-        todayInfo.querySelector('span').textContent = new Date().toLocaleDateString('fr', { day: 'numeric', month: 'long', year: 'numeric' });
+        todayInfo.querySelector('h2').textContent = new Date().toLocaleDateString('sv', { weekday: 'long' });
+        todayInfo.querySelector('span').textContent = new Date().toLocaleDateString('sv', { day: 'numeric', month: 'long', year: 'numeric' });
         todayWeatherIcon.className = `bx bx-${weatherIconMap[todayWeatherIconCode]}`;
         todayTemp.textContent = todayTemperature;
 
@@ -82,7 +82,7 @@ function fetchWeatherData(location) {
         daysList.innerHTML = '';
         for (const dayData of nextDaysData) {
             const forecastDate = new Date(dayData.dt_txt);
-            const dayAbbreviation = forecastDate.toLocaleDateString('fr', { weekday: 'short' });
+            const dayAbbreviation = forecastDate.toLocaleDateString('sv', { weekday: 'short' });
             const dayTemp = `${Math.round(dayData.main.temp)}°C`;
             const iconCode = dayData.weather[0].icon;
 
