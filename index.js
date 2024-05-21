@@ -82,7 +82,7 @@ function fetchWeatherData(location) {
         daysList.innerHTML = '';
         for (const dayData of nextDaysData) {
             const forecastDate = new Date(dayData.dt_txt);
-            const dayAbbreviation = forecastDate.toLocaleDateString('en', { weekday: 'short' });
+            const dayAbbreviation = forecastDate.toLocaleDateString('sv', { weekday: 'short' });
             const dayTemp = `${Math.round(dayData.main.temp)}°C`;
             const iconCode = dayData.weather[0].icon;
 
@@ -109,7 +109,7 @@ function fetchWeatherData(location) {
     });
 }
 
-// Fetch weather data on document load for default location (Germany)
+
 document.addEventListener('DOMContentLoaded', () => {
     const defaultLocation = 'Helsinki';
     fetchWeatherData(defaultLocation);
