@@ -38,19 +38,19 @@ function fetchWeatherData(location) {
         const todayTemperature = `${Math.round(data.list[0].main.temp)}°C`;
         const todayWeatherIconCode = data.list[0].weather[0].icon;
 
-        todayInfo.querySelector('h2').textContent = new Date().toLocaleDateString('sv', { weekday: 'long' });
-        todayInfo.querySelector('span').textContent = new Date().toLocaleDateString('sv', { day: 'numeric', month: 'long', year: 'numeric' });
+        todayInfo.querySelector('h2').textContent = new Date().toLocaleDateString('fr', { weekday: 'long' });
+        todayInfo.querySelector('span').textContent = new Date().toLocaleDateString('fr', { day: 'numeric', month: 'long', year: 'numeric' });
         todayWeatherIcon.className = `bx bx-${weatherIconMap[todayWeatherIconCode]}`;
         todayTemp.textContent = todayTemperature;
 
-        // Update location and weather description in the "left-info" section
+        
         const locationElement = document.querySelector('.today-info > div > span');
         locationElement.textContent = `${data.city.name}, ${data.city.country}`;
 
         const weatherDescriptionElement = document.querySelector('.today-weather > h3');
         weatherDescriptionElement.textContent = todayWeather;
 
-        // Update todays info in the "day-info" section
+        
         const todayPrecipitation = `${data.list[0].pop}%`;
         const todayHumidity = `${data.list[0].main.humidity}%`;
         const todayWindSpeed = `${data.list[0].wind.speed} m/s`;
@@ -73,7 +73,7 @@ function fetchWeatherData(location) {
 
         `;
 
-        // Update next 4 days weather
+        
         const today = new Date();
         const nextDaysData = data.list.slice(1);
 
@@ -82,11 +82,11 @@ function fetchWeatherData(location) {
         daysList.innerHTML = '';
         for (const dayData of nextDaysData) {
             const forecastDate = new Date(dayData.dt_txt);
-            const dayAbbreviation = forecastDate.toLocaleDateString('sv', { weekday: 'short' });
+            const dayAbbreviation = forecastDate.toLocaleDateString('fr', { weekday: 'short' });
             const dayTemp = `${Math.round(dayData.main.temp)}°C`;
             const iconCode = dayData.weather[0].icon;
 
-            // Ensure the day isn't duplicate and today
+            
             if (!uniqueDays.has(dayAbbreviation) && forecastDate.getDate() !== today.getDate()) {
                 uniqueDays.add(dayAbbreviation);
                 daysList.innerHTML += `
