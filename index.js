@@ -38,8 +38,8 @@ function fetchWeatherData(location) {
         const todayTemperature = `${Math.round(data.list[0].main.temp)}°C`;
         const todayWeatherIconCode = data.list[0].weather[0].icon;
 
-        todayInfo.querySelector('h2').textContent = new Date().toLocaleDateString('en', { weekday: 'long' });
-        todayInfo.querySelector('span').textContent = new Date().toLocaleDateString('en', { day: 'numeric', month: 'long', year: 'numeric' });
+        todayInfo.querySelector('h2').textContent = new Date().toLocaleDateString('sv', { weekday: 'long' });
+        todayInfo.querySelector('span').textContent = new Date().toLocaleDateString('sv', { day: 'numeric', month: 'long', year: 'numeric' });
         todayWeatherIcon.className = `bx bx-${weatherIconMap[todayWeatherIconCode]}`;
         todayTemp.textContent = todayTemperature;
 
